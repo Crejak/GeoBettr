@@ -1,0 +1,27 @@
+.geobettr_notepad_container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+}
+
+.geobettr_notepad_container .geobettr_notepad_textarea {
+    width: 40vw;
+    height: 60vh;
+    background: none;
+    border: none;
+    font-family: sans-serif;
+    font-size: 20pt;
+    text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white;
+    resize: none;
+    opacity: 0.5;
+}
+
+.geobettr_notepad_container.geobettr_focus {
+    pointer-events: unset;
+}
+
+
+.geobettr_notepad_container.geobettr_focus .geobettr_notepad_textarea {
+
+}

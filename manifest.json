@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Geobettr",
+  "version": "0.1",
+  "description": "Enhance Geoguessr UI",
+  "icons": {
+    "48": "img/icon-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.geoguessr.com/*"
+      ],
+      "js": [
+        "main.js"
+      ],
+      "css": [
+        "main.css"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": ["redirect.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "webNavigation"
+  ]
+}
+  
