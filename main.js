@@ -62,6 +62,8 @@ class Controller {
         console.debug("State", this.state);
         if (this.state === STATE.GAME.ROUND) {
             this.view.displayNotepad();
+        } else {
+            this.view.removeNotepad();
         }
     }
 
@@ -109,11 +111,21 @@ class View {
 
     }
 
+    removeNotepad() {
+        document.querySelector(".geobettr_notepad_container").remove();
+    }
+
     displayNotepad() {
         const notepad = this.createElement(VIEW_NOTEPAD);
         document.body.appendChild(notepad.content);
         document.querySelector(".geobettr_notepad_container").addEventListener('keyup', (e) => {
             e.stopPropagation();
+        });
+        document.querySelector(".geobettr_notepad_container").addEventListener('keydown', (e) => {
+            e.stopPropagation();
+            if (e.key === "Escape") {
+                document.querySelector(".geobettr_notepad_textarea").blur();
+            }
         });
         document.addEventListener('keyup', (e) => {
             if (e.key === "t") {
@@ -121,6 +133,18 @@ class View {
                 e.stopPropagation();
                 document.querySelector(".geobettr_notepad_container").classList.add("geobettr_focus");
                 document.querySelector(".geobettr_notepad_textarea").focus();
+            } else if (e.key === "g") {
+                e.preventDefault();
+                e.stopPropagation();
+                let classList = document.querySelector(".geobettr_notepad_textarea").classList;
+                if (classList.contains("geobettr_full_opacity")) {
+                    classList.remove("geobettr_full_opacity");
+                    classList.add("geobettr_hidden");
+                } else if (classList.contains("geobettr_hidden")) {
+                    classList.remove("geobettr_hidden");
+                } else {
+                    classList.add("geobettr_full_opacity");
+                }
             }
         });
         document.querySelector(".geobettr_notepad_textarea").addEventListener('focusout', () => {

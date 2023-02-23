@@ -12,16 +12,26 @@
     border: none;
     font-family: sans-serif;
     font-size: 20pt;
-    text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white;
+    text-shadow: 2px 0 2px white, -2px 0 2px white, 0 2px 2px white, 0 -2px 2px white;
     resize: none;
     opacity: 0.5;
+    outline: none;
+}
+
+.geobettr_notepad_textarea.geobettr_full_opacity {
+    opacity: 1;
+}
+
+.geobettr_notepad_textarea.geobettr_hidden {
+    opacity: 0;
 }
 
 .geobettr_notepad_container.geobettr_focus {
     pointer-events: unset;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
-
 .geobettr_notepad_container.geobettr_focus .geobettr_notepad_textarea {
-
+    opacity: 1;
+    text-shadow: 2px 0 2px yellow, -2px 0 2px yellow, 0 2px 2px yellow, 0 -2px 2px yellow;
 }

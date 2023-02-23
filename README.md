@@ -25,3 +25,4 @@ You do not need to credit me (it would be appreciated if you do though).
   - Stored in a file (maybe in a remote storage later)
   - See your score history (best score for a specific format, best time 
   on a map, etc.)
+- Add a clock for unlimited games (round time + global time)
