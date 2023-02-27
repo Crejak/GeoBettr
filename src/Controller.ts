@@ -1,15 +1,8 @@
-import {View} from "./View";
-
-export enum State {
-    DEFAULT,
-    GAME_ROUND,
-    GAME_RESULTS,
-    GAME_BREAKDOWN
-}
+import {Store} from "./model/Store";
+import {GeoguessrPage} from "./model/GeoguessrPage";
 
 export class Controller {
-    state: State = State.DEFAULT;
-    view: View;
+    store: Store;
     $next: HTMLElement;
     nextObserver: MutationObserver;
     $inGameRoot?: HTMLElement;
@@ -17,38 +10,26 @@ export class Controller {
     $resultList?: HTMLElement;
 
     constructor() {
-        this.view = new View();
+        this.store = Store.getInstance();
         const $next = document.getElementById("__next");
         if (!$next) {
             throw new Error("Could not find #__next element");
         }
         this.$next = $next;
         this.nextObserver = new MutationObserver(() => {
-            this.evaluateState();
+            this.evaluatePage();
         });
         this.nextObserver.observe(this.$next, {
             subtree: true,
             childList: true
         })
-        this.evaluateState();
+        this.evaluatePage();
     }
 
-    onStateChange() {
-        console.debug("State", this.state);
-        if (this.state === State.GAME_ROUND) {
-            this.view.displayNotepad();
-        } else {
-            this.view.removeNotepad();
-        }
-    }
-
-    evaluateState() {
+    evaluatePage() {
         this.tryQueryKeyNodes();
-        const state = this.computeStateFromKeyNodes();
-        if (state !== this.state) {
-            this.state = state;
-            this.onStateChange();
-        }
+        const page = this.computePageFromKeyNodes();
+        this.store.set("currentPage", page);
     }
 
     tryQueryKeyNodes() {
@@ -57,16 +38,16 @@ export class Controller {
         this.$resultList = this.$next.querySelector("[class^=result-list_listWrapper]") ?? undefined;
     }
 
-    computeStateFromKeyNodes() {
+    computePageFromKeyNodes(): GeoguessrPage {
         if (!this.$inGameRoot) {
-            return State.DEFAULT;
+            return GeoguessrPage.OTHER;
         }
         if (!this.$resultRoot) {
-            return State.GAME_ROUND;
+            return GeoguessrPage.GAME_ROUND;
         }
         if (!this.$resultList) {
-            return State.GAME_RESULTS;
+            return GeoguessrPage.GAME_RESULTS;
         }
-        return State.GAME_BREAKDOWN;
+        return GeoguessrPage.GAME_BREAKDOWN;
     }
 }
