@@ -12,19 +12,12 @@
         "*://*.geoguessr.com/*"
       ],
       "js": [
-        "main.js"
+        "dist/bundle.js"
       ],
       "css": [
         "main.css"
       ]
     }
-  ],
-  "background": {
-    "scripts": ["redirect.js"],
-    "persistent": false
-  },
-  "permissions": [
-    "webNavigation"
   ]
 }
   
