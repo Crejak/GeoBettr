@@ -1,3 +1,5 @@
-import {GREETINGS} from "./ext";
+import {Controller} from "./Controller";
 
-console.log(GREETINGS);
+console.log("GeoBettr extension is running");
+
+new Controller();

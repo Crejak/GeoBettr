@@ -8,14 +8,17 @@
 .geobettr_notepad_container .geobettr_notepad_textarea {
     width: 40vw;
     height: 60vh;
+    padding: 0 5px;
     background: none;
     border: none;
     font-family: sans-serif;
     font-size: 20pt;
-    text-shadow: 2px 0 2px white, -2px 0 2px white, 0 2px 2px white, 0 -2px 2px white;
+    color: white;
+    text-shadow: 2px 2px black;
     resize: none;
     opacity: 0.5;
     outline: none;
+    overflow: hidden;
 }
 
 .geobettr_notepad_textarea.geobettr_full_opacity {
@@ -28,10 +31,10 @@
 
 .geobettr_notepad_container.geobettr_focus {
     pointer-events: unset;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .geobettr_notepad_container.geobettr_focus .geobettr_notepad_textarea {
     opacity: 1;
-    text-shadow: 2px 0 2px yellow, -2px 0 2px yellow, 0 2px 2px yellow, 0 -2px 2px yellow;
+    overflow: auto;
 }
