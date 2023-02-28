@@ -47,20 +47,12 @@
     overflow: hidden;
 }
 
-.geobettr_notepad_textarea.geobettr_full_opacity {
-    opacity: 1;
-}
-
-.geobettr_notepad_textarea.geobettr_hidden {
-    opacity: 0;
-}
-
 .geobettr_notepad_container.geobettr_focus {
     pointer-events: all;
     background: rgba(0, 0, 0, 0.4);
 }
 
 .geobettr_notepad_container.geobettr_focus .geobettr_notepad_textarea {
-    opacity: 1;
+    opacity: 1 !important;
     overflow: auto;
 }

@@ -10,7 +10,9 @@ export abstract class Component {
         this.created();
     }
 
+    abstract buttons(): Array<string>;
+    abstract onButtonPressed(buttonName: string): any;
     abstract template(): string;
-    abstract created(): void;
-    abstract dispose(): void;
+    abstract created(): any;
+    abstract dispose(): any;
 }
