@@ -6,12 +6,14 @@ export interface Observer {
 }
 
 export interface StateModel {
-    currentPage: GeoguessrPage
+    currentPage: GeoguessrPage,
+    gameId?: string
 }
 
 function defaultStateModel(): StateModel {
     return {
-        currentPage: GeoguessrPage.OTHER
+        currentPage: GeoguessrPage.OTHER,
+        gameId: undefined
     };
 }
 

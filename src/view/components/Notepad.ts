@@ -55,7 +55,7 @@ export class Notepad extends Component {
         document.querySelector(".geobettr_notepad_textarea")?.addEventListener('focusout', this.onTextAreaFocusOut);
     }
 
-    get html(): string {
+    template(): string {
         return `
 <div class="geobettr_notepad_container">
     <textarea class="geobettr_notepad_textarea" spellcheck="false"></textarea>

@@ -1,7 +1,33 @@
-.geobettr_notepad_container {
+#geobettr {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    height: 0;
+    z-index: 1;
+}
+
+#geobettr_menu {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 80px;
+}
+
+#geobettr_menu .geobettr_button {
+    padding: 0;
+    height: 32px;
+    width: 32px;
+    display: block;
+    margin: 5px 0 0 5px;
+}
+
+#geobettr_component {
+    display: inline-block;
+    vertical-align: top;
+    pointer-events: none;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.geobettr_notepad_container {
     pointer-events: none;
 }
 
@@ -30,7 +56,7 @@
 }
 
 .geobettr_notepad_container.geobettr_focus {
-    pointer-events: unset;
+    pointer-events: all;
     background: rgba(0, 0, 0, 0.4);
 }
 
