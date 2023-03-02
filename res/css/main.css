@@ -12,11 +12,29 @@
 }
 
 #geobettr_menu .geobettr_button {
-    padding: 0;
+    padding: 5px;
     height: 32px;
     width: 32px;
     display: block;
     margin: 5px 0 0 5px;
+    border: none;
+    background: rgba(0, 0, 0, .6);
+    border-radius: 16px;
+}
+
+#geobettr_menu .geobettr_button:hover {
+    background: rgba(0, 0, 0, .8);
+}
+
+#geobettr_menu .geobettr_button img {
+    width: 100%;
+    height: 100%;
+}
+
+#geobettr_menu .geobettr_button.geobettr_icon {
+    background: none;
+    pointer-events: none;
+    padding: 0;
 }
 
 #geobettr_component {
@@ -29,12 +47,13 @@
 
 .geobettr_notepad_container {
     pointer-events: none;
+    border-radius: 8px;
 }
 
 .geobettr_notepad_container .geobettr_notepad_textarea {
-    width: 40vw;
+    width: 38vw;
     height: 60vh;
-    padding: 0 5px;
+    padding: 5px;
     background: none;
     border: none;
     font-family: sans-serif;
@@ -49,7 +68,7 @@
 
 .geobettr_notepad_container.geobettr_focus {
     pointer-events: all;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, .4);
 }
 
 .geobettr_notepad_container.geobettr_focus .geobettr_notepad_textarea {

@@ -1,5 +1,10 @@
 import {createTemplate} from "../utils";
 
+export interface ComponentButton {
+    name: string,
+    img: string
+}
+
 export abstract class Component {
     protected $root: HTMLElement;
 
@@ -10,7 +15,7 @@ export abstract class Component {
         this.created();
     }
 
-    abstract buttons(): Array<string>;
+    abstract buttons(): Array<ComponentButton>;
     abstract onButtonPressed(buttonName: string): any;
     abstract template(): string;
     abstract created(): any;

@@ -1,4 +1,4 @@
-import {Component} from "../Component";
+import {Component, ComponentButton} from "../Component";
 
 export class Notepad extends Component {
 
@@ -73,8 +73,14 @@ export class Notepad extends Component {
         `;
     }
 
-    buttons(): Array<string> {
-        return ["notepad", "opacity"];
+    buttons(): Array<ComponentButton> {
+        return [{
+            name: "notepad",
+            img: "img/pen.svg"
+        }, {
+            name: "opacity",
+            img: "img/eye_open.svg"
+        }];
     }
 
     onButtonPressed(buttonName: string): any {
