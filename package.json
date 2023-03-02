@@ -4,8 +4,8 @@
   "description": "Utility extension for GeoGuessr",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "copy-and-watch --clean res/**/* dist && webpack && web-ext --source-dir=dist build",
-    "start": "concurrently -k -n \"copy,webpack,web-ext\" \"copy-and-watch --watch --clean res/**/* dist\" webpack --watch \"web-ext --source-dir=dist run\""
+    "build": "copy-and-watch --clean res/** dist && webpack && web-ext --source-dir=dist build",
+    "start": "concurrently -k -n \"copy,webpack,web-ext\" \"copy-and-watch --watch --clean res/** dist\" webpack --watch \"web-ext --source-dir=dist run\""
   },
   "author": "valentin.rigolle@gmail.com",
   "license": "ISC",
