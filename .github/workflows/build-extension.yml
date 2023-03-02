@@ -2,7 +2,9 @@ name: build-extension
 on:
   push:
     branches:
-      master
+      - master
+    tags:
+      - '*'
 jobs:
   build:
     runs-on: ubuntu-latest
