@@ -4,7 +4,7 @@
   "version": "0.1",
   "description": "Enhance Geoguessr UI",
   "icons": {
-    "48": "img/icon-48.png"
+    "48": "res/img/icon-48.png"
   },
   "content_scripts": [
     {
@@ -12,12 +12,15 @@
         "*://*.geoguessr.com/*"
       ],
       "js": [
-        "dist/bundle.js"
+        "bundle.js"
       ],
       "css": [
         "main.css"
       ]
     }
+  ],
+  "web_accessible_resources": [
+    "res/*"
   ]
 }
   
