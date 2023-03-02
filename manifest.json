@@ -15,12 +15,12 @@
         "bundle.js"
       ],
       "css": [
-        "main.css"
+        "res/css/main.css"
       ]
     }
   ],
   "web_accessible_resources": [
-    "res/*"
+    "res/img/*"
   ]
 }
   
